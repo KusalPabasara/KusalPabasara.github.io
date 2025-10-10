@@ -150,4 +150,4 @@ This project is available for personal and commercial use with appropriate attri
 
 ---
 
-Made with ❤️ by Kusal Pabasara | [LinkedIn](https://www.linkedin.com/in/kusal-pabasara-3a17b5363/) | [GitHub](https://github.com/KusalPabasara)
+ | [LinkedIn](https://www.linkedin.com/in/kusal-pabasara-3a17b5363/) | [GitHub](https://github.com/KusalPabasara)
