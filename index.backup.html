@@ -19,44 +19,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* Dark Mode Theme (Default) */
-        [data-theme="dark"] {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #a855f7;
-            --accent: #10b981;
-            --bg-dark: #0f172a;
-            --bg-darker: #020617;
-            --surface: #1e293b;
-            --surface-light: #334155;
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --border: #334155;
-            --glow: rgba(99, 102, 241, 0.3);
-            --glass-bg: rgba(30, 41, 59, 0.6);
-            --glass-border: rgba(148, 163, 184, 0.1);
-        }
-        
-        /* Light Mode Theme */
-        [data-theme="light"] {
-            --primary: #4f46e5;
-            --primary-dark: #4338ca;
-            --secondary: #9333ea;
-            --accent: #059669;
-            --bg-dark: #f8fafc;
-            --bg-darker: #ffffff;
-            --surface: #f1f5f9;
-            --surface-light: #e2e8f0;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --text-muted: #64748b;
-            --border: #cbd5e1;
-            --glow: rgba(79, 70, 229, 0.2);
-            --glass-bg: rgba(241, 245, 249, 0.8);
-            --glass-border: rgba(203, 213, 225, 0.5);
-        }
-        
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
@@ -71,8 +33,6 @@
             --text-muted: #94a3b8;
             --border: #334155;
             --glow: rgba(99, 102, 241, 0.3);
-            --glass-bg: rgba(30, 41, 59, 0.6);
-            --glass-border: rgba(148, 163, 184, 0.1);
         }
         
         * {
@@ -949,10 +909,10 @@
         
         /* Glass Effect */
         .glass {
-            background: var(--glass-bg);
+            background: rgba(30, 41, 59, 0.6);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
+            border: 1px solid rgba(148, 163, 184, 0.1);
         }
         
         /* Card Hover Glow */
@@ -1012,61 +972,9 @@
                 padding: 0 1rem;
             }
         }
-        
-        /* Theme Toggle Button */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 2px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .theme-toggle:hover {
-            transform: scale(1.1) rotate(15deg);
-            border-color: var(--primary);
-            box-shadow: 0 6px 25px var(--glow);
-        }
-        
-        .theme-toggle i {
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            transition: all 0.3s ease;
-        }
-        
-        .theme-toggle:hover i {
-            color: var(--primary);
-        }
-        
-        /* Hide sun in dark mode, hide moon in light mode */
-        [data-theme="dark"] .sun-icon {
-            display: none;
-        }
-        
-        [data-theme="light"] .moon-icon {
-            display: none;
-        }
     </style>
 </head>
 <body class="grid-bg">
-    
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <i class="fas fa-sun sun-icon"></i>
-        <i class="fas fa-moon moon-icon"></i>
-    </button>
 
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4">
@@ -1111,17 +1019,17 @@
                 
                 <!-- Specializations -->
                 <div class="flex flex-wrap justify-center gap-3 py-6" style="animation: fadeInUp 0.8s ease-out 0.2s both;">
-                    <span class="px-4 py-2 bg-surface/50 rounded-lg border border-border text-sm font-medium text-text-secondary hover:border-primary/50 hover:text-white transition-colors">
-                        <i class="fas fa-brain text-text-secondary mr-2"></i>Machine Learning
+                    <span class="px-4 py-2 bg-surface/50 rounded-lg border border-border text-sm font-medium hover:border-primary/50 transition-colors">
+                        <i class="fas fa-brain text-primary mr-2"></i>Machine Learning
                     </span>
-                    <span class="px-4 py-2 bg-surface/50 rounded-lg border border-border text-sm font-medium text-text-secondary hover:border-primary/50 hover:text-white transition-colors">
-                        <i class="fas fa-chart-line text-text-secondary mr-2"></i>Data Science
+                    <span class="px-4 py-2 bg-surface/50 rounded-lg border border-border text-sm font-medium hover:border-primary/50 transition-colors">
+                        <i class="fas fa-chart-line text-secondary mr-2"></i>Data Science
                     </span>
-                    <span class="px-4 py-2 bg-surface/50 rounded-lg border border-border text-sm font-medium text-text-secondary hover:border-primary/50 hover:text-white transition-colors">
-                        <i class="fas fa-code text-text-secondary mr-2"></i>Full Stack Development
+                    <span class="px-4 py-2 bg-surface/50 rounded-lg border border-border text-sm font-medium hover:border-primary/50 transition-colors">
+                        <i class="fas fa-code text-accent mr-2"></i>Full Stack Development
                     </span>
-                    <span class="px-4 py-2 bg-surface/50 rounded-lg border border-border text-sm font-medium text-text-secondary hover:border-primary/50 hover:text-white transition-colors">
-                        <i class="fas fa-trophy text-text-secondary mr-2"></i>Competitive Programming
+                    <span class="px-4 py-2 bg-surface/50 rounded-lg border border-border text-sm font-medium hover:border-primary/50 transition-colors">
+                        <i class="fas fa-trophy text-yellow-400 mr-2"></i>Competitive Programming
                     </span>
                 </div>
                 
@@ -1185,55 +1093,47 @@
             <!-- Achievement Cards Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                 <!-- Champions Badge -->
-                <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 border-2 border-transparent hover:border-primary/50 group">
-                    <div class="text-6xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-trophy text-yellow-400"></i>
-                    </div>
-                    <div class="inline-block px-3 py-1 bg-primary/20 rounded-full mb-3">
-                        <span class="text-primary font-bold text-sm italic">CHAMPIONS</span>
+                <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 border-2 border-transparent hover:border-yellow-400/50 group">
+                    <div class="text-6xl mb-4 group-hover:scale-110 transition-transform">🏆</div>
+                    <div class="inline-block px-3 py-1 bg-yellow-400/20 rounded-full mb-3">
+                        <span class="text-yellow-400 font-bold text-sm">CHAMPIONS</span>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">InnovateX</h3>
-                    <p class="text-text-secondary mb-1"><span class="font-semibold">Hackathon 2024</span></p>
-                    <p class="text-text-muted text-sm italic">Zebra Technologies</p>
+                    <p class="text-text-secondary font-medium mb-1">Hackathon 2024</p>
+                    <p class="text-text-muted text-sm">Zebra Technologies</p>
                 </div>
                 
                 <!-- First Runners Up Badge -->
-                <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 border-2 border-transparent hover:border-primary/50 group">
-                    <div class="text-6xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-medal text-gray-400"></i>
-                    </div>
-                    <div class="inline-block px-3 py-1 bg-primary/20 rounded-full mb-3">
-                        <span class="text-primary font-bold text-sm italic">1ST RUNNERS UP</span>
+                <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 border-2 border-transparent hover:border-gray-400/50 group">
+                    <div class="text-6xl mb-4 group-hover:scale-110 transition-transform">🥈</div>
+                    <div class="inline-block px-3 py-1 bg-gray-400/20 rounded-full mb-3">
+                        <span class="text-gray-300 font-bold text-sm">1ST RUNNERS UP</span>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Hackelite 2.0</h3>
-                    <p class="text-text-secondary mb-1"><span class="font-semibold">Marga.lk Project</span></p>
-                    <p class="text-text-muted text-sm italic">IEEE WIE UOM</p>
+                    <p class="text-text-secondary font-medium mb-1">Marga.lk Project</p>
+                    <p class="text-text-muted text-sm">IEEE WIE UOM</p>
                 </div>
                 
                 <!-- Top 6 Badge -->
-                <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 border-2 border-transparent hover:border-primary/50 group">
-                    <div class="text-6xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-award text-purple-400"></i>
-                    </div>
-                    <div class="inline-block px-3 py-1 bg-primary/20 rounded-full mb-3">
-                        <span class="text-primary font-bold text-sm italic">TOP 6 / 150+</span>
+                <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 border-2 border-transparent hover:border-purple-400/50 group">
+                    <div class="text-6xl mb-4 group-hover:scale-110 transition-transform">🎯</div>
+                    <div class="inline-block px-3 py-1 bg-purple-400/20 rounded-full mb-3">
+                        <span class="text-purple-400 font-bold text-sm">TOP 6 / 150+</span>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">JapuraXtreme</h3>
-                    <p class="text-text-secondary mb-1"><span class="font-semibold">Team TrippleBoot</span></p>
-                    <p class="text-text-muted text-sm italic">6th Place</p>
+                    <p class="text-text-secondary font-medium mb-1">Team TrippleBoot</p>
+                    <p class="text-text-muted text-sm">6th Place</p>
                 </div>
                 
                 <!-- Top 20 Badge -->
-                <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 border-2 border-transparent hover:border-primary/50 group">
-                    <div class="text-6xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-star text-cyan-400"></i>
-                    </div>
-                    <div class="inline-block px-3 py-1 bg-primary/20 rounded-full mb-3">
-                        <span class="text-primary font-bold text-sm italic">TOP 20 TEAMS</span>
+                <div class="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 border-2 border-transparent hover:border-cyan-400/50 group">
+                    <div class="text-6xl mb-4 group-hover:scale-110 transition-transform">🌟</div>
+                    <div class="inline-block px-3 py-1 bg-cyan-400/20 rounded-full mb-3">
+                        <span class="text-cyan-400 font-bold text-sm">TOP 20 TEAMS</span>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">UOJcoders v4.0</h3>
-                    <p class="text-text-secondary mb-1"><span class="font-semibold">Team DualDudes</span></p>
-                    <p class="text-text-muted text-sm italic">University of Jaffna</p>
+                    <p class="text-text-secondary font-medium mb-1">Team DualDudes</p>
+                    <p class="text-text-muted text-sm">University of Jaffna</p>
                 </div>
             </div>
         </div>
@@ -1267,16 +1167,16 @@
                         
                         <div class="space-y-4 text-text-secondary leading-relaxed">
                             <p class="text-lg">
-                                I'm a Computer Science & Engineering undergraduate at the <strong class="text-white font-bold">University of Moratuwa</strong>, Sri Lanka's premier technical university.
+                                I'm a Computer Science & Engineering undergraduate at the <span class="text-white font-semibold">University of Moratuwa</span>, Sri Lanka's premier technical university.
                             </p>
                             <p>
-                                My expertise lies in <strong class="font-bold text-white">Machine Learning</strong>, <strong class="font-bold text-white">Data Science</strong>, and <strong class="font-bold text-white">Full Stack Web Development</strong>. I thrive on solving complex problems and building innovative solutions.
+                                My expertise lies in <span class="text-primary font-semibold">Machine Learning</span>, <span class="text-secondary font-semibold">Data Science</span>, and <span class="text-accent font-semibold">Full Stack Web Development</span>. I thrive on solving complex problems and building innovative solutions.
                             </p>
                             <p>
-                                As a <em class="font-semibold text-white not-italic">competitive programmer</em> and <strong class="font-bold text-white">hackathon champion</strong>, I've secured multiple victories including <strong class="text-white">InnovateX Champions</strong> and <strong class="text-white">Hackelite First Runners-up</strong>, demonstrating my ability to deliver under pressure.
+                                As a <span class="text-yellow-400 font-semibold">competitive programmer</span> and <span class="text-yellow-400 font-semibold">hackathon champion</span>, I've secured multiple victories including InnovateX Champions and Hackelite First Runners-up, demonstrating my ability to deliver under pressure.
                             </p>
                             <p>
-                                Beyond coding, I'm an active member of the <em class="italic">Classical Music Society</em> and participate in community service through the <em class="italic">Leo Club</em>, believing in holistic personal development.
+                                Beyond coding, I'm an active member of the Classical Music Society and participate in community service through the Leo Club, believing in holistic personal development.
                             </p>
                         </div>
                         
@@ -1323,114 +1223,114 @@
                     <h3 class="text-xl font-bold mb-4 text-white">Programming Languages</h3>
                     <ul class="space-y-2 text-text-secondary">
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Python</strong></span>
+                            <i class="fas fa-check-circle text-primary text-sm"></i>
+                            <span>Python</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>C / C++</strong></span>
+                            <i class="fas fa-check-circle text-primary text-sm"></i>
+                            <span>C / C++</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Java</strong></span>
+                            <i class="fas fa-check-circle text-primary text-sm"></i>
+                            <span>Java</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>JavaScript</strong></span>
+                            <i class="fas fa-check-circle text-primary text-sm"></i>
+                            <span>JavaScript</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>SQL</strong></span>
+                            <i class="fas fa-check-circle text-primary text-sm"></i>
+                            <span>SQL</span>
                         </li>
                     </ul>
                 </div>
                 
                 <!-- ML & Data Science -->
                 <div class="glass rounded-2xl p-6 card-glow transition-all duration-300 hover:scale-105">
-                    <div class="w-14 h-14 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center mb-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-secondary to-purple-600 rounded-xl flex items-center justify-center mb-4">
                         <i class="fas fa-brain text-2xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4 text-white">ML & Data Science</h3>
                     <ul class="space-y-2 text-text-secondary">
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Machine Learning</strong></span>
+                            <i class="fas fa-check-circle text-secondary text-sm"></i>
+                            <span>Machine Learning</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Deep Learning</strong></span>
+                            <i class="fas fa-check-circle text-secondary text-sm"></i>
+                            <span>Deep Learning</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Data Analysis</strong></span>
+                            <i class="fas fa-check-circle text-secondary text-sm"></i>
+                            <span>Data Analysis</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Data Visualization</strong></span>
+                            <i class="fas fa-check-circle text-secondary text-sm"></i>
+                            <span>Data Visualization</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Statistical Analysis</strong></span>
+                            <i class="fas fa-check-circle text-secondary text-sm"></i>
+                            <span>Statistical Analysis</span>
                         </li>
                     </ul>
                 </div>
                 
                 <!-- Web Development -->
                 <div class="glass rounded-2xl p-6 card-glow transition-all duration-300 hover:scale-105">
-                    <div class="w-14 h-14 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center mb-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-accent to-green-600 rounded-xl flex items-center justify-center mb-4">
                         <i class="fas fa-laptop-code text-2xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4 text-white">Web Development</h3>
                     <ul class="space-y-2 text-text-secondary">
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Frontend</strong> <em class="text-sm italic">(React, Vue)</em></span>
+                            <i class="fas fa-check-circle text-accent text-sm"></i>
+                            <span>Frontend (React, Vue)</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Backend</strong> <em class="text-sm italic">(Node.js)</em></span>
+                            <i class="fas fa-check-circle text-accent text-sm"></i>
+                            <span>Backend (Node.js)</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Full Stack Development</strong></span>
+                            <i class="fas fa-check-circle text-accent text-sm"></i>
+                            <span>Full Stack Development</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>RESTful APIs</strong></span>
+                            <i class="fas fa-check-circle text-accent text-sm"></i>
+                            <span>RESTful APIs</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Database Design</strong></span>
+                            <i class="fas fa-check-circle text-accent text-sm"></i>
+                            <span>Database Design</span>
                         </li>
                     </ul>
                 </div>
                 
                 <!-- Competitive Programming -->
                 <div class="glass rounded-2xl p-6 card-glow transition-all duration-300 hover:scale-105">
-                    <div class="w-14 h-14 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center mb-4">
+                    <div class="w-14 h-14 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mb-4">
                         <i class="fas fa-trophy text-2xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4 text-white">Competitive Programming</h3>
                     <ul class="space-y-2 text-text-secondary">
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Problem Solving</strong></span>
+                            <i class="fas fa-check-circle text-yellow-400 text-sm"></i>
+                            <span>Problem Solving</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Algorithm Design</strong></span>
+                            <i class="fas fa-check-circle text-yellow-400 text-sm"></i>
+                            <span>Algorithm Design</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Data Structures</strong></span>
+                            <i class="fas fa-check-circle text-yellow-400 text-sm"></i>
+                            <span>Data Structures</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Hackathon Experience</strong></span>
+                            <i class="fas fa-check-circle text-yellow-400 text-sm"></i>
+                            <span>Hackathon Experience</span>
                         </li>
                         <li class="flex items-center gap-2">
-                            <i class="fas fa-check-circle text-text-muted text-sm"></i>
-                            <span><strong>Team Collaboration</strong></span>
+                            <i class="fas fa-check-circle text-yellow-400 text-sm"></i>
+                            <span>Team Collaboration</span>
                         </li>
                     </ul>
                 </div>
@@ -1465,12 +1365,12 @@
                         <div class="flex-1">
                             <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
                                 <h3 class="text-xl font-bold text-white">HRM Pillar - Moraspirit</h3>
-                                <span class="text-sm text-primary font-semibold mt-2 md:mt-0">
-                                    <i class="fas fa-circle text-xs text-text-muted mr-1"></i>Current
+                                <span class="text-sm text-accent font-semibold mt-2 md:mt-0">
+                                    <i class="fas fa-circle text-xs mr-1"></i>Current
                                 </span>
                             </div>
                             <p class="text-text-secondary">
-                                Active member contributing to <strong>human resource management</strong> initiatives and projects within the university community, developing <em>organizational and people management skills</em>.
+                                Active member contributing to human resource management initiatives and projects within the university community, developing organizational and people management skills.
                             </p>
                         </div>
                     </div>
@@ -1480,20 +1380,20 @@
                 <div class="glass rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300">
                     <div class="flex flex-col md:flex-row gap-4 md:gap-6">
                         <div class="flex-shrink-0">
-                            <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-secondary to-purple-600 rounded-xl flex items-center justify-center">
                                 <i class="fas fa-hands-helping text-2xl text-white"></i>
                             </div>
                         </div>
                         <div class="flex-1">
                             <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
                                 <h3 class="text-xl font-bold text-white">District Coordinator - "Shilpasara" Project</h3>
-                                <span class="text-sm text-primary font-semibold mt-2 md:mt-0">
-                                    <i class="fas fa-circle text-xs text-text-muted mr-1"></i>Current
+                                <span class="text-sm text-accent font-semibold mt-2 md:mt-0">
+                                    <i class="fas fa-circle text-xs mr-1"></i>Current
                                 </span>
                             </div>
-                            <p class="text-text-muted mb-2"><em>UOM Leo Club</em></p>
+                            <p class="text-text-muted mb-2">UOM Leo Club</p>
                             <p class="text-text-secondary">
-                                <strong>Leading and coordinating</strong> district-level activities for the Shilpasara Project, focusing on <em>community development and service initiatives</em> across the region.
+                                Leading and coordinating district-level activities for the Shilpasara Project, focusing on community development and service initiatives across the region.
                             </p>
                         </div>
                     </div>
@@ -1503,20 +1403,20 @@
                 <div class="glass rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300">
                     <div class="flex flex-col md:flex-row gap-4 md:gap-6">
                         <div class="flex-shrink-0">
-                            <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-accent to-green-600 rounded-xl flex items-center justify-center">
                                 <i class="fas fa-music text-2xl text-white"></i>
                             </div>
                         </div>
                         <div class="flex-1">
                             <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
                                 <h3 class="text-xl font-bold text-white">Classical Music Society (CMS)</h3>
-                                <span class="text-sm text-primary font-semibold mt-2 md:mt-0">
-                                    <i class="fas fa-circle text-xs text-text-muted mr-1"></i>Current
+                                <span class="text-sm text-accent font-semibold mt-2 md:mt-0">
+                                    <i class="fas fa-circle text-xs mr-1"></i>Current
                                 </span>
                             </div>
-                            <p class="text-text-muted mb-2"><em>University of Moratuwa</em></p>
+                            <p class="text-text-muted mb-2">University of Moratuwa</p>
                             <p class="text-text-secondary">
-                                <strong>Active participant</strong> in the Classical Music Society, pursuing <em>musical interests</em> and promoting <em>cultural activities</em> alongside academic studies.
+                                Active participant in the Classical Music Society, pursuing musical interests and promoting cultural activities alongside academic studies.
                             </p>
                         </div>
                     </div>
@@ -1526,19 +1426,19 @@
                 <div class="glass rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300">
                     <div class="flex flex-col md:flex-row gap-4 md:gap-6">
                         <div class="flex-shrink-0">
-                            <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
                                 <i class="fas fa-trophy text-2xl text-white"></i>
                             </div>
                         </div>
                         <div class="flex-1">
                             <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
                                 <h3 class="text-xl font-bold text-white">Hackathon Champion</h3>
-                                <span class="text-sm text-primary font-semibold mt-2 md:mt-0">
-                                    <i class="fas fa-award text-text-muted mr-1"></i>Multiple Victories
+                                <span class="text-sm text-yellow-400 font-semibold mt-2 md:mt-0">
+                                    <i class="fas fa-award mr-1"></i>Multiple Victories
                                 </span>
                             </div>
                             <p class="text-text-secondary">
-                                Won multiple prestigious hackathons including <strong class="text-white">InnovateX (Champions)</strong>, <strong class="text-white">Hackelite 2.0 (First Runners-up)</strong>, and achieved top placements at <em>JapuraXtreme</em> and <em>UOJcoders v4.0</em>. Demonstrated exceptional <strong>problem-solving</strong>, <strong>teamwork</strong>, and <strong>rapid prototyping</strong> skills under pressure.
+                                Won multiple prestigious hackathons including <span class="text-yellow-400 font-semibold">InnovateX (Champions)</span>, <span class="text-gray-300 font-semibold">Hackelite 2.0 (First Runners-up)</span>, and achieved top placements at JapuraXtreme and UOJcoders v4.0. Demonstrated exceptional problem-solving, teamwork, and rapid prototyping skills under pressure.
                             </p>
                         </div>
                     </div>
@@ -1570,19 +1470,19 @@
                 <div class="glass rounded-2xl overflow-hidden card-glow transition-all duration-300 hover:scale-105 group">
                     <div class="relative h-56 overflow-hidden">
                         <img src="InnovateX.jpeg" alt="InnovateX Hackathon" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                        <div class="absolute top-4 right-4 px-3 py-1 bg-primary/90 backdrop-blur-sm rounded-full">
-                            <span class="text-white font-bold text-sm"><i class="fas fa-trophy mr-1"></i>CHAMPIONS</span>
+                        <div class="absolute top-4 right-4 px-3 py-1 bg-yellow-400/90 backdrop-blur-sm rounded-full">
+                            <span class="text-black font-bold text-sm">🏆 CHAMPIONS</span>
                         </div>
                     </div>
                     <div class="p-6 space-y-4">
                         <h3 class="text-2xl font-bold text-white">InnovateX Hackathon</h3>
                         <p class="text-text-secondary">
-                            Team <strong class="text-white">Gmora</strong> developed an <em>innovative solution</em> for Zebra Technologies, securing the <strong>championship title</strong>.
+                            <span class="font-semibold text-primary">Team Gmora</span> developed an innovative solution for Zebra Technologies, securing the championship title.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold italic">Innovation</span>
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold italic">Zebra Tech</span>
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold italic">2024</span>
+                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Innovation</span>
+                            <span class="px-3 py-1 bg-surface text-text-secondary rounded-full text-sm">Zebra Tech</span>
+                            <span class="px-3 py-1 bg-surface text-text-secondary rounded-full text-sm">2024</span>
                         </div>
                         <a href="https://github.com/KusalPabasara/InnovateX.git" target="_blank" class="inline-flex items-center gap-2 text-primary hover:text-primary-dark transition-colors font-semibold">
                             <i class="fab fa-github"></i>
@@ -1596,21 +1496,21 @@
                 <div class="glass rounded-2xl overflow-hidden card-glow transition-all duration-300 hover:scale-105 group">
                     <div class="relative h-56 overflow-hidden">
                         <img src="Hackelite.jpeg" alt="Hackelite 2.0" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                        <div class="absolute top-4 right-4 px-3 py-1 bg-primary/90 backdrop-blur-sm rounded-full">
-                            <span class="text-white font-bold text-sm"><i class="fas fa-medal mr-1"></i>1ST RUNNER-UP</span>
+                        <div class="absolute top-4 right-4 px-3 py-1 bg-gray-400/90 backdrop-blur-sm rounded-full">
+                            <span class="text-black font-bold text-sm">🥈 1ST RUNNER-UP</span>
                         </div>
                     </div>
                     <div class="p-6 space-y-4">
                         <h3 class="text-2xl font-bold text-white">Hackelite 2.0</h3>
                         <p class="text-text-secondary">
-                            Built <strong class="text-white">Marga.lk</strong>, an <em>innovative web application</em> for IEEE WIE UOM, earning <strong>first runners-up position</strong>.
+                            Built <span class="font-semibold text-secondary">Marga.lk</span>, an innovative web application for IEEE WIE UOM, earning first runners-up position.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold italic">Web App</span>
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold italic">IEEE WIE</span>
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold italic">UOM</span>
+                            <span class="px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm">Web App</span>
+                            <span class="px-3 py-1 bg-surface text-text-secondary rounded-full text-sm">IEEE WIE</span>
+                            <span class="px-3 py-1 bg-surface text-text-secondary rounded-full text-sm">UOM</span>
                         </div>
-                        <a href="https://github.com/KusalPabasara/hacklite.git" target="_blank" class="inline-flex items-center gap-2 text-primary hover:text-primary-dark transition-colors font-semibold">
+                        <a href="https://github.com/KusalPabasara/hacklite.git" target="_blank" class="inline-flex items-center gap-2 text-secondary hover:text-purple-400 transition-colors font-semibold">
                             <i class="fab fa-github"></i>
                             <span>View on GitHub</span>
                             <i class="fas fa-arrow-right text-sm"></i>
@@ -1622,18 +1522,18 @@
                 <div class="glass rounded-2xl overflow-hidden card-glow transition-all duration-300 hover:scale-105 group">
                     <div class="relative h-56 overflow-hidden">
                         <img src="JapuraXtreme.jpeg" alt="JapuraXtreme" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                        <div class="absolute top-4 right-4 px-3 py-1 bg-primary/90 backdrop-blur-sm rounded-full">
-                            <span class="text-white font-bold text-sm"><i class="fas fa-award mr-1"></i>TOP 6</span>
+                        <div class="absolute top-4 right-4 px-3 py-1 bg-purple-400/90 backdrop-blur-sm rounded-full">
+                            <span class="text-black font-bold text-sm">🎯 TOP 6</span>
                         </div>
                     </div>
                     <div class="p-6 space-y-4">
                         <h3 class="text-2xl font-bold text-white">JapuraXtreme</h3>
                         <p class="text-text-secondary">
-                            Team <strong class="text-white">TrippleBoot</strong> secured <strong>6th place out of 150+ teams</strong> in this <em>intense competitive programming challenge</em>.
+                            <span class="font-semibold text-purple-400">Team TrippleBoot</span> secured 6th place out of 150+ teams in this intense competitive programming challenge.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold italic">Top 6/150+</span>
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold italic">Competitive</span>
+                            <span class="px-3 py-1 bg-purple-400/20 text-purple-400 rounded-full text-sm">Top 6/150+</span>
+                            <span class="px-3 py-1 bg-surface text-text-secondary rounded-full text-sm">Competitive</span>
                         </div>
                     </div>
                 </div>
@@ -1642,19 +1542,19 @@
                 <div class="glass rounded-2xl overflow-hidden card-glow transition-all duration-300 hover:scale-105 group">
                     <div class="relative h-56 overflow-hidden">
                         <img src="UOJcodersv4.0.jpeg" alt="UOJcoders v4.0" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                        <div class="absolute top-4 right-4 px-3 py-1 bg-primary/90 backdrop-blur-sm rounded-full">
-                            <span class="text-white font-bold text-sm"><i class="fas fa-star mr-1"></i>TOP 20</span>
+                        <div class="absolute top-4 right-4 px-3 py-1 bg-cyan-400/90 backdrop-blur-sm rounded-full">
+                            <span class="text-black font-bold text-sm">🌟 TOP 20</span>
                         </div>
                     </div>
                     <div class="p-6 space-y-4">
                         <h3 class="text-2xl font-bold text-white">UOJcoders v4.0</h3>
                         <p class="text-text-secondary">
-                            Team <strong class="text-white">DualDudes</strong> qualified for <strong>top 20 teams</strong> at this <em>prestigious CS Department hackathon</em>.
+                            <span class="font-semibold text-cyan-400">Team DualDudes</span> qualified for top 20 teams at this prestigious CS Department hackathon.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold italic">Top 20</span>
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold italic">UOJ</span>
-                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold italic">CS Dept</span>
+                            <span class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-sm">Top 20</span>
+                            <span class="px-3 py-1 bg-surface text-text-secondary rounded-full text-sm">UOJ</span>
+                            <span class="px-3 py-1 bg-surface text-text-secondary rounded-full text-sm">CS Dept</span>
                         </div>
                     </div>
                 </div>
@@ -1690,14 +1590,14 @@
                             <div class="flex flex-col md:flex-row md:items-start justify-between mb-3">
                                 <div>
                                     <h3 class="text-2xl font-bold text-white mb-2">University of Moratuwa</h3>
-                                    <p class="text-xl text-white font-bold"><em>B.Sc. (Hons) in Computer Science and Engineering</em></p>
+                                    <p class="text-xl text-primary font-semibold">B.Sc. (Hons) in Computer Science and Engineering</p>
                                 </div>
-                                <span class="text-sm text-primary font-semibold mt-2 md:mt-0">
-                                    <i class="fas fa-circle text-xs text-text-muted mr-1"></i>Current
+                                <span class="text-sm text-accent font-semibold mt-2 md:mt-0">
+                                    <i class="fas fa-circle text-xs mr-1"></i>Current
                                 </span>
                             </div>
                             <p class="text-text-secondary">
-                                Pursuing degree with focus on <strong>Machine Learning</strong>, <strong>Data Science</strong>, <strong>Software Engineering</strong>, and <strong>Full Stack Development</strong>. Active in <em>hackathons and competitive programming</em> with multiple championship wins.
+                                Pursuing degree with focus on Machine Learning, Data Science, Software Engineering, and Full Stack Development. Active in hackathons and competitive programming with multiple championship wins.
                             </p>
                         </div>
                     </div>
@@ -1707,21 +1607,21 @@
                 <div class="glass rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300">
                     <div class="flex flex-col md:flex-row gap-4 md:gap-6">
                         <div class="flex-shrink-0">
-                            <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-secondary to-purple-600 rounded-xl flex items-center justify-center">
                                 <i class="fas fa-school text-2xl text-white"></i>
                             </div>
                         </div>
                         <div class="flex-1">
                             <div>
                                 <h3 class="text-2xl font-bold text-white mb-2">Richmond College, Galle</h3>
-                                <p class="text-xl text-white font-bold mb-2"><em>GCE A/L Physical Science Stream</em></p>
-                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/20 rounded-lg mb-3">
-                                    <i class="fas fa-award text-text-muted"></i>
-                                    <span class="text-white font-bold">3A's | Z-score: 2.6247</span>
+                                <p class="text-xl text-secondary font-semibold mb-2">GCE A/L Physical Science Stream</p>
+                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-accent/20 rounded-lg mb-3">
+                                    <i class="fas fa-award text-accent"></i>
+                                    <span class="text-accent font-bold">3A's | Z-score: 2.6247</span>
                                 </div>
                             </div>
                             <p class="text-text-secondary">
-                                <strong>Excelled in Physical Science subjects</strong>, achieving <strong>top grades</strong> that secured admission to the University of Moratuwa's <em>prestigious Computer Science & Engineering program</em>.
+                                Excelled in Physical Science subjects, achieving top grades that secured admission to the University of Moratuwa's prestigious Computer Science & Engineering program.
                             </p>
                         </div>
                     </div>
@@ -1731,15 +1631,15 @@
                 <div class="glass rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300">
                     <div class="flex flex-col md:flex-row gap-4 md:gap-6">
                         <div class="flex-shrink-0">
-                            <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-accent to-green-600 rounded-xl flex items-center justify-center">
                                 <i class="fas fa-book-reader text-2xl text-white"></i>
                             </div>
                         </div>
                         <div class="flex-1">
                             <h3 class="text-2xl font-bold text-white mb-2">Vidyaloka College, Galle</h3>
-                            <p class="text-xl text-white font-bold mb-3"><em>Primary & Secondary Education</em></p>
+                            <p class="text-xl text-accent font-semibold mb-3">Primary & Secondary Education</p>
                             <p class="text-text-secondary">
-                                Built a <strong>strong academic foundation</strong> during formative years, developing core competencies in <em>mathematics, science, and problem-solving</em>.
+                                Built a strong academic foundation during formative years, developing core competencies in mathematics, science, and problem-solving.
                             </p>
                         </div>
                     </div>
@@ -1784,12 +1684,12 @@
                     
                     <div class="glass rounded-2xl p-6 hover:border-primary/50 transition-all duration-300">
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rounded-lg flex items-center justify-center flex-shrink-0">
+                            <div class="w-12 h-12 bg-gradient-to-br from-secondary to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
                                 <i class="fas fa-phone text-xl text-white"></i>
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold text-white mb-2">Phone</h3>
-                                <a href="tel:+94716720764" class="text-text-secondary hover:text-primary transition-colors">
+                                <a href="tel:+94716720764" class="text-text-secondary hover:text-secondary transition-colors">
                                     +94 716 720 764
                                 </a>
                             </div>
@@ -1798,7 +1698,7 @@
                     
                     <div class="glass rounded-2xl p-6 hover:border-primary/50 transition-all duration-300">
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rounded-lg flex items-center justify-center flex-shrink-0">
+                            <div class="w-12 h-12 bg-gradient-to-br from-accent to-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
                                 <i class="fas fa-map-marker-alt text-xl text-white"></i>
                             </div>
                             <div>
@@ -1933,7 +1833,7 @@
                 <!-- Copyright -->
                 <div class="pt-8 border-t border-border text-center">
                     <p class="text-text-muted text-sm">
-                        &copy; 2025 <strong class="text-white">Kusal Pabasara</strong>. All rights reserved.
+                        &copy; 2025 <span class="text-primary font-semibold">Kusal Pabasara</span>. Crafted with <i class="fas fa-heart text-red-500"></i> for innovation.
                     </p>
                 </div>
             </div>
